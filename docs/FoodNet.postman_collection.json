@@ -1,0 +1,400 @@
+{
+  "info": {
+    "_postman_id": "6f908cde-1f2c-4203-8349-d718b951cc7f",
+    "name": "FoodNet",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38219317"
+  },
+  "item": [
+    {
+      "name": "Identity.API",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"email\": \"john@test.com\",\r\n    \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:5000/auth/register",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"email\": \"john@test.com\",\r\n    \"password\": \"password123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:5000/auth/login",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Basket.API",
+      "item": [
+        {
+          "name": "Add basket",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AdGVzdC5jb20iLCJuYW1laWQiOiIxIiwibmJmIjoxNzc0MjU4NjA5LCJleHAiOjE3NzQ4NjM0MDksImlhdCI6MTc3NDI1ODYwOX0.Zke2KPbwGo3zpdRqHuFGVFhIPpm07548z4j272lD8Ts",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"items\": [\r\n    {\r\n      \"itemId\": \"PIZZA-001\",\r\n      \"itemName\": \"Pepperoni Pizza\",\r\n      \"price\": 15.50,\r\n      \"quantity\": 2\r\n    },\r\n    {\r\n      \"quantity\": 2,\r\n      \"price\": 20.50,\r\n      \"itemId\": \"Burger-001\",\r\n      \"itemName\": \"Veggie Burger\"\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/basket/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "basket",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get basket",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AdGVzdC5jb20iLCJuYW1laWQiOiIxIiwibmJmIjoxNzc0MjU4NjA5LCJleHAiOjE3NzQ4NjM0MDksImlhdCI6MTc3NDI1ODYwOX0.Zke2KPbwGo3zpdRqHuFGVFhIPpm07548z4j272lD8Ts",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:5000/basket/",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "basket",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete basket",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:5000/basket/sara",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "basket",
+                "sara"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Checkout",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AdGVzdC5jb20iLCJuYW1laWQiOiIxIiwibmJmIjoxNzc0MjU4NjA5LCJleHAiOjE3NzQ4NjM0MDksImlhdCI6MTc3NDI1ODYwOX0.Zke2KPbwGo3zpdRqHuFGVFhIPpm07548z4j272lD8Ts",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"firstName\": \"John\",\r\n    \"lastName\": \"Doe\",\r\n    \"emailAddress\": \"john@test.com\",\r\n    \"addressLine\": \"123 Main Street, Cairo\",\r\n    \"cardName\": \"John Doe\",\r\n    \"cardNumber\": \"4111111111111111\",\r\n    \"expiration\": \"12/26\",\r\n    \"cvv\": \"123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5000/basket/checkout",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "basket",
+                "checkout"
+              ]
+            }
+          },
+          "response": []
+        }
+      ],
+      "auth": {
+        "type": "bearer",
+        "bearer": [
+          {
+            "key": "token",
+            "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AdGVzdC5jb20iLCJuYW1laWQiOiIxIiwibmJmIjoxNzc0MjU1OTk0LCJleHAiOjE3NzQ4NjA3OTQsImlhdCI6MTc3NDI1NTk5NH0.zA_TyDF0SGvoesn8DbOP2DV_MTFIpQY_DlHuLCI-qdU",
+            "type": "string"
+          }
+        ]
+      },
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {},
+            "exec": [
+              ""
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Catalog.API",
+      "item": [
+        {
+          "name": "Get Restaurant",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AdGVzdC5jb20iLCJuYW1laWQiOiIxIiwibmJmIjoxNzc0MjU3MjIwLCJleHAiOjE3NzQ4NjIwMjAsImlhdCI6MTc3NDI1NzIyMH0.o5g5US0j579TAO16nhifrUk96g01A4x8ZEF9H93yl3A",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "localhost:5000/catalog/",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "catalog",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Restaurant By id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AdGVzdC5jb20iLCJuYW1laWQiOiIxIiwibmJmIjoxNzc0MjU3MjIwLCJleHAiOjE3NzQ4NjIwMjAsImlhdCI6MTc3NDI1NzIyMH0.o5g5US0j579TAO16nhifrUk96g01A4x8ZEF9H93yl3A",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "localhost:5000/catalog/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "catalog",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create a restaurant",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AdGVzdC5jb20iLCJuYW1laWQiOiIxIiwibmJmIjoxNzc0MjU3MjIwLCJleHAiOjE3NzQ4NjIwMjAsImlhdCI6MTc3NDI1NzIyMH0.o5g5US0j579TAO16nhifrUk96g01A4x8ZEF9H93yl3A",
+                "type": "text"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"zoz's Pizza\",\r\n  \"address\": \"79 Broadway Ave\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:5000/catalog/restaurants",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "catalog",
+                "restaurants"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Ordering.API",
+      "item": [
+        {
+          "name": "Get Al lOrders",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AdGVzdC5jb20iLCJuYW1laWQiOiIxIiwibmJmIjoxNzc0MjU4NjA5LCJleHAiOjE3NzQ4NjM0MDksImlhdCI6MTc3NDI1ODYwOX0.Zke2KPbwGo3zpdRqHuFGVFhIPpm07548z4j272lD8Ts",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "localhost:5000/order",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "order"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Order By Id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AdGVzdC5jb20iLCJuYW1laWQiOiIxIiwibmJmIjoxNzc0MjU4NjA5LCJleHAiOjE3NzQ4NjM0MDksImlhdCI6MTc3NDI1ODYwOX0.Zke2KPbwGo3zpdRqHuFGVFhIPpm07548z4j272lD8Ts",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "localhost:5000/order/1",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "order",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "User Orders",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AdGVzdC5jb20iLCJuYW1laWQiOiIxIiwibmJmIjoxNzc0MjU4NjA5LCJleHAiOjE3NzQ4NjM0MDksImlhdCI6MTc3NDI1ODYwOX0.Zke2KPbwGo3zpdRqHuFGVFhIPpm07548z4j272lD8Ts",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "localhost:5000/order/my-orders",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "order",
+                "my-orders"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
