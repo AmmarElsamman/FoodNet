@@ -1,6 +1,6 @@
 # FoodNet 🍕
 
-A backend system for a food delivery app that handles restaurants, shopping carts, and orders — built with a microservices architecture in .NET 8.
+A backend system for a food delivery app that handles restaurants, shopping carts, and orders — built with a microservices architecture in .NET 10.
 
 ---
 
